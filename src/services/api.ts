@@ -8,7 +8,8 @@ import { getToken } from './token';
 import { toast } from 'react-toastify';
 import { StatusCodes } from 'http-status-codes';
 
-export const BASE_URL = 'https://14.design.pages.academy/six-cities';
+// export const BASE_URL = 'https://14.design.pages.academy/six-cities';
+export const BASE_URL = 'https://14.design.htmlacademy.pro/six-cities';
 export const REQUEST_TIMEOUT = 5000;
 
 type DetailMessageType = {
@@ -44,7 +45,7 @@ export const createAPI = (): AxiosInstance => {
     (response) => response,
     (error: AxiosError<DetailMessageType>) => {
       if (error.response && shouldDisplayError(error.response)) {
-        const detailMessage = (error.response.data);
+        const detailMessage = error.response.data;
         toast.warn(detailMessage.message);
       }
 
