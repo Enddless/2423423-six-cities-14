@@ -21,7 +21,7 @@ export default function App(): JSX.Element {
 
   return (
     <HelmetProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/6-sities">
         <Scroll>
           <Routes>
             <Route path={AppRoute.Root} element={<Main />}>
